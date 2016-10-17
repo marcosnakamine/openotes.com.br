@@ -13,22 +13,55 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
+title: openotes
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
+
+# Secondary Parameters
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://openotes.com.br" # the base hostname & protocol for your site, e.g. http://example.com
+header-img: img/home-bg.jpg
+headercolor: "#FFFFFF"
+# logo: /project-pages/img/logos/Project-Pages-New-Logo-Inverted.png
+
+# Tertiary Parameters
+# twitter_username: jekyllrb
+# facebook_username:
+github_username:  marcosnakamine
+project_repository: openotes.com.br
+disqus_shortname: openotes
+# g-analytics: UA-75881392-1
+altmetric: true
+
 
 # Build settings
 markdown: kramdown
 theme: minima
+highlighter: rouge
+permalink: pretty
+paginate: 10
 gems:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock
+  - less
+  - node_modules
+  - Gruntfile.js
+  - package.json
+  - README.dm
+
+# Jekyll Settings
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "project"
+      header-img: "img/home-bg.jpg"
