@@ -10,6 +10,7 @@ categories: [AngularJS]
 ---
 
 # Padrões do AngularJS
+
 ## Motivação
 Por se tratar de Javascript, você tem muita liberdade de organizar seu projeto o que não é errado.
 Mas imagine você precisando dar manutenção em códigos que você escreveu a semanas atrás e geralmente nem lembrar que padrão estava seguindo. Ou pior, outro desenvolvedor precisando dar manutenção ao seu código. Seria um esforço a mais e desnecessário gerando estresse e gasto de tempo. E hoje em dia, tempo é dinheiro.
