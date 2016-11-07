@@ -10,6 +10,7 @@ categories: [MongoDB, course]
 ---
 
 # MongoDB
+
 ## O que é?
 MongoDB é um banco de dados não relacional que é organizado por documentos.
 
