@@ -2,7 +2,10 @@
 layout: post
 title: "Padrões do AngularJS"
 date: "2016-10-25 21:22:12 -0200"
-author: "Marcel Nakamine"
+author:
+    name: "Marcel Nakamine"
+    url: "https://www.blogger.com/profile/15113696834989107891?rel=author"
+    image: "//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=w35"
 categories: [AngularJS]
 ---
 
