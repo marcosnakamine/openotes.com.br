@@ -46,7 +46,6 @@ paginate: 10
 gems:
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-lunr-js-search
 exclude:
   - Gemfile
   - Gemfile.lock
