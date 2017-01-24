@@ -12,6 +12,7 @@ categories: [GIT]
 Segue uma lista de vários comandos úteis para o dia a dia usando GIT pela linha de comandos (CLI).
 
 Sincronizar um fork
+
 ``` terminal
 $ git fetch upstream
 $ git checkout master
@@ -19,6 +20,7 @@ $ git merge upstream/master
 ```
 
 Git force pull to overwrite local files
+
 ``` terminal
 $ git fetch --all
 $ git reset --hard origin/master
