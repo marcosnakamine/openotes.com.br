@@ -1,0 +1,99 @@
+---
+layout: post
+title: "[Beginning Docker] Introduction"
+date: "2017-04-03 10:00:00 -0200"
+author:
+    name: "Marcel Nakamine"
+    url: "https://www.blogger.com/profile/15113696834989107891?rel=author"
+    image: "//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=w35"
+categories: [docker]
+---
+
+# Docker
+
+Ouviu falar sobre Docker mas ainda continua tendo dúvidas? Não se preocupe, você não está sozinho nessa. Vou tentar introduzir o Docker com algumas práticas.
+
+## O que não é Docker?
+
+- Docker não é um Linux Container technology (i.e. LXC)
+- Docker não é limitado somente para LXC (teoricamente no futuro ele pode gerenciar VMs)
+- Docker não é para substituir um Gerenciador de Configuração como [Chef](https://www.chef.io/chef/), [Puppet](https://puppet.com/), [SaltStack](https://saltstack.com/), etc.
+- Docker não é PaaS
+- Docker não é bom para 
+
+## Com o que o Docker é bom?
+
+- Docker é bom para Contruir e Compartilhar imagens de disco com os outros através do [Docker Hub](https://hub.docker.com/)
+- Docker é um gerenciador da infraestrutura
+- Docker é um bom modelo de distribuição de imagens para configurar servidores com ferramentas de provisionamento como Chef, Puppet, SaltStack, etc.
+- Docker usa o mesmo sistema de acompanhamento dos commits para outros poderem colaborar também (igual ao git)
+- Docker possui um repositório central de imagens de discos (público e privado) que habilita você a facilmente rodar um sistema operacional diferente (Ubuntu, Centos, Fedora, entre outros) igual ao do seu servidor de produção.
+
+## Configuração inicial
+
+### Vamos instalando o Docker.
+Complete o modo de instalação para o seu sistema operacional:
+[Docker for MAC](https://www.docker.com/docker-mac)
+[Docker for Windows 10](https://www.docker.com/docker-windows)
+[Docker for Windows 7/8 or previous](https://www.docker.com/products/docker-toolbox)
+[Docker for Ubuntu](https://www.docker.com/docker-ubuntu)
+
+### Verificar a instalação
+No terminal, rode um ```docker version```. Se reconhecer o comando, prossiga com um ```docker run hello-world``` para o famoso Hello, World no Docker.
+O output será algo parecido com isso:
+```
+ $ docker run hello-world
+ Unable to find image 'hello-world:latest' locally
+ latest: Pulling from library/hello-world
+ 535020c3e8ad: Pull complete
+ af340544ed62: Pull complete
+ Digest: sha256:a68868bfe696c00866942e8f5ca39e3e31b79c1e50feaee4ce5e28df2f051d5c
+ Status: Downloaded newer image for hello-world:latest
+
+ Hello from Docker.
+ This message shows that your installation appears to be working correctly.
+
+ To generate this message, Docker took the following steps:
+ 1. The Docker Engine CLI client contacted the Docker Engine daemon.
+ 2. The Docker Engine daemon pulled the "hello-world" image from the Docker Hub.
+ 3. The Docker Engine daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker Engine daemon streamed that output to the Docker Engine CLI client, which sent it
+    to your terminal.
+
+ To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+ Share images, automate workflows, and more with a free Docker Hub account:
+ https://hub.docker.com
+
+ For more examples and ideas, visit:
+ https://docs.docker.com/userguide/
+```
+
+## Diferenças entre Container e Virtual Machine
+
+- No caso de Virtual Machine (ou Máquina Virtual em português), o programa virtualiza todo o hardware do seu computador, o que pode ficar pesado com vários MB e demorado para inicialização. Além de inicializar vários processos para funcionar a VM.
+  - Exemplos de programas para Virtual Machine são [VMWare](http://www.vmware.com/), [VirtualBox](https://www.virtualbox.org/), [Parallels](http://www.parallels.com/) e outros.
+- Já o Container, ele compartilha o kernel do seu sistema operacional com o mínimo necessário para rodar sua applicação. Sendo assim muito mais leve e rápido. Quando você roda o Docker no Windows e no Mac, ele baixa uma versão do Linux alpine com o mínimo necessário para rodar o docker em cima. Ele inicializa somente o processo que você quer rodar.
+
+## Como o Docker funciona?
+
+### Objetos principais do Docker
+- Images
+  - É um modelo do seu Container. São arquivos do sistema, configurados ou não.
+
+- Containers
+  - São instâncias das Imagens. Cada modificação precisa dar um commit para poder persistir na imagem. Caso contrário, essa modificação ficará somente nesse container. Você pode gerenciar seus containers com comandos do docker para subir e para o servidor, criar uma imagem a partir do estado do seu container entre outros comandos.
+
+- Dockerfiles
+  - É um arquivo para construir e configurar um container a partir de uma imagem.
+
+- Registries
+  - Registros das suas imagens quando você dá um pull e push das suas configurações. Vários registros estão no Docker Index (Docker hub)
+
+### Onde fica cada objeto
+
+Docker é organizado por camadas (ou layers em inglês). Cada layer é uma imagem e pode haver mais de uma imagem em cima da outra.
+Começando de baixo para cima, o sistema operacional/kernel seria essa primeira layer base. Já em cima o 
+
